@@ -12,14 +12,14 @@ import java.util.List;
 public class Customer {
 
     private Integer id;
-    private String pesel;
+    private String userId;
     private String name;
     private CustomerType type;
     private List<Account> accounts;
 
-    public Customer(int id, String pesel, String name, CustomerType type) {
+    public Customer(int id, String userId, String name, CustomerType type) {
         this.id = id;
-        this.pesel = pesel;
+        this.userId = userId;
         this.name = name;
         this.type = type;
     }

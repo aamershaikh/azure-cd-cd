@@ -23,19 +23,19 @@ public class Api {
 
     public Api() {
         customers = new ArrayList<>();
-        customers.add(new Customer(1, "12345", "Adam Kowalski", CustomerType.INDIVIDUAL));
-        customers.add(new Customer(2, "12346", "Anna Malinowska", CustomerType.INDIVIDUAL));
-        customers.add(new Customer(3, "12347", "Paweł Michalski", CustomerType.INDIVIDUAL));
-        customers.add(new Customer(4, "12348", "Karolina Lewandowska", CustomerType.INDIVIDUAL));
+        customers.add(new Customer(1, "12345", "ABC DEF", CustomerType.INDIVIDUAL));
+        customers.add(new Customer(2, "12346", "PQR STU", CustomerType.INDIVIDUAL));
+        customers.add(new Customer(3, "12347", "UVW XYZ", CustomerType.INDIVIDUAL));
+        customers.add(new Customer(4, "12348", "JKL NMP", CustomerType.INDIVIDUAL));
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pesel/{pesel}")
-    public Customer findByPesel(@PathVariable("pesel") String pesel) throws CustomerNotFoundException {
-        log.info(String.format("Customer.findByPesel(%s)", pesel));
+    @RequestMapping(method = RequestMethod.GET, value = "/userId/{userId}")
+    public Customer findByUserId(@PathVariable("userId") String userId) throws CustomerNotFoundException {
+        log.info(String.format("Customer.findByUserId(%s)", userId));
         return customers.stream()
-                .filter(it -> it.getPesel().equals(pesel))
+                .filter(it -> it.getUserId().equals(userId))
                 .findFirst()
-                .orElseThrow(() -> new CustomerNotFoundException("pesel : " + pesel));
+                .orElseThrow(() -> new CustomerNotFoundException("userId : " + userId));
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "")
