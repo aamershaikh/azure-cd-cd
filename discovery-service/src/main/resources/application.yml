@@ -9,3 +9,6 @@ eureka:
     fetchRegistry: false
   server:
     enableSelfPreservation: false
+
+
+##TODO: add git files

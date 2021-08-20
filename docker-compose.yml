@@ -56,3 +56,6 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
     links:
       - discovery
+
+
+##TODO: add git files
